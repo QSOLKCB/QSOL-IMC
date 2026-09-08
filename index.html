@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110a">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="QSOL-IMC Constellation — a curated field index linking QSOL-IMC research, software, experiments, tools, games, sonification and visualisation projects hosted in QSOLKCB.">
+  <meta property="og:title" content="QSOL-IMC // Constellation">
+  <meta property="og:description" content="One signal. 57 curated project nodes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qsolkcb.github.io/QSOL-IMC/">
+  <title>QSOL-IMC // Constellation</title>
+  <link rel="canonical" href="https://qsolkcb.github.io/QSOL-IMC/">
+  <link rel="icon" href="assets/qsol-constellation.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#constellation-index">Skip to project index</a>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="crt-noise" aria-hidden="true"></div>
+
+  <main class="terminal-shell">
+    <header class="hero panel">
+      <div class="hero-topline">
+        <span>QSOL-IMC // CONSTELLATION INDEX</span>
+        <span class="status-live"><i aria-hidden="true"></i> SIGNAL LIVE</span>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <pre class="brand-mark" aria-label="QSOL constellation mark">       ·
+   ·───●───·
+       │
+  ●── QSOL ──●
+       │
+       ·</pre>
+          <p class="kicker">INDEPENDENT MULTIDISCIPLINARY COMPUTING</p>
+          <h1>One signal.<br><span>57 project nodes.</span></h1>
+          <p class="lede">A curated field index for QSOL-IMC work hosted in QSOLKCB. Research, software, models, experiments, games, sonification, visualisation and assorted computational heresy — without making you carry an entire GitHub organisation around as a URL.</p>
+        </div>
+
+        <aside class="telemetry" aria-label="Constellation telemetry">
+          <div><span>NODES</span><strong id="total-nodes">57</strong></div>
+          <div><span>VISIBLE</span><strong id="visible-nodes">57</strong></div>
+          <div><span>ACCESS</span><strong>PUBLIC</strong></div>
+          <div><span>MODE</span><strong>STATIC</strong></div>
+          <div><span>TRACKERS</span><strong>ZERO</strong></div>
+          <div><span>DEPENDENCIES</span><strong>ZERO</strong></div>
+        </aside>
+      </div>
+
+      <div class="hero-actions">
+        <a class="terminal-button primary" href="#constellation-index">ENTER CONSTELLATION</a>
+        <button class="terminal-button" id="random-node" type="button">RANDOM NODE</button>
+        <button class="terminal-button" id="copy-link" type="button">COPY THIS LINK</button>
+        <a class="terminal-button" href="https://github.com/QSOLKCB/QSOL-IMC" target="_blank" rel="noopener noreferrer">SOURCE ↗</a>
+      </div>
+    </header>
+
+    <section class="scope panel" aria-labelledby="scope-title">
+      <div class="panel-heading">
+        <div>
+          <span class="section-code">[ SCOPE-01 ]</span>
+          <h2 id="scope-title">Constellation scope</h2>
+        </div>
+        <p id="scope-status">ALL SIGNALS / 57 NODES</p>
+      </div>
+      <p class="scope-note">The field above is deterministic: each repository has its own fixed coordinate. Filtering the index also filters the constellation.</p>
+      <div class="scope-key" aria-hidden="true">
+        <span>● REPOSITORY NODE</span>
+        <span>─ SHARED FIELD</span>
+        <span>⌁ CURATED SIGNAL</span>
+      </div>
+    </section>
+
+    <section class="index panel" id="constellation-index" aria-labelledby="index-title">
+      <div class="panel-heading index-heading">
+        <div>
+          <span class="section-code">[ INDEX-57 ]</span>
+          <h2 id="index-title">Repository field index</h2>
+        </div>
+        <p>PRESS <kbd>/</kbd> TO SEARCH · <kbd>ESC</kbd> TO CLEAR</p>
+      </div>
+
+      <div class="controls">
+        <label class="search-box" for="repo-search">
+          <span>&gt; FIND_NODE</span>
+          <input id="repo-search" type="search" autocomplete="off" spellcheck="false" placeholder="type repository name…">
+        </label>
+        <div class="filters" id="filters" aria-label="Filter repositories by field"></div>
+      </div>
+
+      <p class="result-line" id="result-line" aria-live="polite">57 / 57 NODES VISIBLE</p>
+      <div class="repo-grid" id="repo-grid"></div>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <strong>NO SIGNAL FOUND.</strong>
+        <span>Try another repository name or reset the field filter.</span>
+      </div>
+    </section>
+
+    <footer class="footer panel">
+      <div>
+        <strong>QSOL-IMC // CONSTELLATION</strong>
+        <span>Curated by QSOL-IMC · Hosted on GitHub Pages</span>
+      </div>
+      <nav aria-label="Footer links">
+        <a href="https://github.com/QSOLKCB/QSOL-IMC" target="_blank" rel="noopener noreferrer">CONSTELLATION SOURCE ↗</a>
+        <a href="https://github.com/QSOLKCB" target="_blank" rel="noopener noreferrer">QSOLKCB ORG ↗</a>
+        <a href="#top" id="back-top">RETURN ↑</a>
+      </nav>
+      <p class="footer-signal">NO FRAMEWORKS · NO BUILD STEP · NO TRACKERS · JUST SIGNAL</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript>
+    <div class="noscript">JavaScript is required for the searchable constellation index. The source repository remains available at github.com/QSOLKCB/QSOL-IMC.</div>
+  </noscript>
+</body>
+</html>
