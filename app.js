@@ -93,6 +93,7 @@ const elements = {
   backTop: document.getElementById("back-top")
 };
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let visibleRepos = [...REPOS];
 let toastTimer = null;
 let resizeFrame = null;
@@ -159,10 +160,10 @@ function createCard(repo) {
 }
 
 function filteredRepos() {
-  const query = state.query.trim().toLocaleLowerCase();
+  const query = state.query.trim().toLowerCase();
   return REPOS.filter((repo) => {
     const categoryMatch = state.category === "ALL" || repo.category === state.category;
-    const queryMatch = !query || `${repo.name} ${repo.category} ${CATEGORY_CODES[repo.category]}`.toLocaleLowerCase().includes(query);
+    const queryMatch = !query || `${repo.name} ${repo.category} ${CATEGORY_CODES[repo.category]}`.toLowerCase().includes(query);
     return categoryMatch && queryMatch;
   });
 }
@@ -362,7 +363,7 @@ elements.copy.addEventListener("click", copyCurrentLink);
 elements.random.addEventListener("click", openRandomNode);
 elements.backTop.addEventListener("click", (event) => {
   event.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: reduceMotion.matches ? "auto" : "smooth" });
 });
 
 window.addEventListener("keydown", (event) => {
