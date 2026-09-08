@@ -16,7 +16,54 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: node --check app.js
+
+      - name: Verify curated catalog
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const source = fs.readFileSync('app.js', 'utf8');
+          const names = [...source.matchAll(/\{ name: "([^"]+)", category: "([^"]+)" \}/g)]
+            .map((match) => ({ name: match[1], category: match[2] }));
+          const allowedCategories = new Set(['Research', 'Physics', 'AI', 'Security', 'Audio', 'Games']);
+          const uniqueNames = new Set(names.map((item) => item.name));
+
+          if (names.length !== 57) {
+            throw new Error(`Expected 57 curated repositories, found ${names.length}`);
+          }
+          if (uniqueNames.size !== names.length) {
+            throw new Error('Duplicate repository name detected in curated whitelist');
+          }
+          for (const item of names) {
+            if (!allowedCategories.has(item.category)) {
+              throw new Error(`Unsupported category for ${item.name}: ${item.category}`);
+            }
+          }
+          console.log(`Validated ${names.length} unique constellation nodes.`);
+          NODE
+
+      - name: Verify static assets
+        shell: bash
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f effects.css
+          test -f app.js
+          test -f assets/qsol-constellation.svg
+          grep -q 'styles.css' index.html
+          grep -q 'effects.css' index.html
+          grep -q 'app.js' index.html
+
   deploy:
+    needs: static-checks
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
