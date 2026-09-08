@@ -34,6 +34,7 @@ The public site provides:
 │   └── qsol-constellation.svg     # favicon / constellation mark
 ├── .nojekyll
 ├── app.js                         # curated repository whitelist + UI logic
+├── effects.css                    # starfield / content layering
 ├── index.html                     # site structure
 ├── styles.css                     # retro CRT / observatory styling
 ├── LICENSE
