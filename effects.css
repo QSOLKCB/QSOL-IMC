@@ -1,0 +1,9 @@
+/* Layering kept separate so the animated/painted field never falls behind the page canvas. */
+#sky {
+  z-index: 0;
+}
+
+.terminal-shell {
+  position: relative;
+  z-index: 1;
+}
