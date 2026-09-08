@@ -29,14 +29,16 @@ The public site provides:
 
 ```text
 .
-├── .github/workflows/pages.yml    # GitHub Pages deployment
+├── .github/workflows/
+│   ├── pages.yml                   # GitHub Pages deployment
+│   └── validate.yml                # syntax/catalog/static checks
 ├── assets/
-│   └── qsol-constellation.svg     # favicon / constellation mark
+│   └── qsol-constellation.svg      # favicon / constellation mark
 ├── .nojekyll
-├── app.js                         # curated repository whitelist + UI logic
-├── effects.css                    # starfield / content layering
-├── index.html                     # site structure
-├── styles.css                     # retro CRT / observatory styling
+├── app.js                          # curated repository whitelist + UI logic
+├── effects.css                     # starfield / content layering
+├── index.html                      # site structure
+├── styles.css                      # retro CRT / observatory styling
 ├── LICENSE
 └── README.md
 ```
@@ -61,6 +63,8 @@ Supported fields are currently:
 - `Games`
 
 The repository URL is generated locally as `https://github.com/QSOLKCB/<name>`; the site does **not** call the GitHub API in visitors' browsers.
+
+`Validate Constellation` checks JavaScript syntax, enforces 57 unique whitelist entries, validates category names and confirms that the static assets referenced by the page exist.
 
 ## Local preview
 
