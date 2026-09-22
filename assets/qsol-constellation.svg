@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title id="title">QSOL constellation mark</title>
-  <rect width="64" height="64" rx="8" fill="#07110a"/>
-  <g fill="none" stroke="#76c98d" stroke-width="1.5" stroke-linecap="square" opacity="0.9">
+  <rect width="64" height="64" rx="8" fill="#100e0a"/>
+  <g fill="none" stroke="#bbab90" stroke-width="1.5" stroke-linecap="square" opacity="0.9">
     <path d="M12 43 24 31 34 18 48 27 42 45 24 31"/>
     <path d="M34 18 42 45" opacity="0.45"/>
   </g>
-  <g fill="#a6ffbe">
+  <g fill="#efb65e">
     <circle cx="12" cy="43" r="2.2"/>
     <circle cx="24" cy="31" r="2.5"/>
     <circle cx="34" cy="18" r="2.2"/>
