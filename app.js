@@ -49,7 +49,6 @@ const REPOS = Object.freeze([
   { name: "LCOS", category: "Games", description: "A parody operating-system desktop that runs in your browser." },
   { name: "BRAINROTLLM", category: "AI", description: "A reproducible parody language model with no learned parameters." },
   { name: "RSH", category: "Research", description: "Constructs bounded 3D paths from curvature and torsion." },
-  { name: "QSOL-HARNESS", category: "AI", description: "An execution harness for scientific agents and reproducible experiments." },
   { name: "WHOAMI-18437", category: "AI", description: "A multi-language software satire that deterministically answers “TRENT”." },
   { name: "deepseekc64", category: "AI", description: "A retro software-art experiment: DeepSeek lost in the C64 matrix." },
   { name: "E8_MUSIC", category: "Audio", description: "A music-making workbench that turns E8 geometry into sound." },
@@ -85,7 +84,34 @@ const REPOS = Object.freeze([
   { name: "SDMT-TATE-LAB", category: "Audio", description: "A sonification laboratory for the Tate project." },
   { name: "coin", category: "Physics", description: "An interactive laboratory for the coin rotation paradox." },
   { name: "C64", category: "Games", description: "A Commodore 64 emulator experience for Linux." },
-  { name: "ghostit", category: "AI", description: "An Android experiment lab for offline personas, speech and compute." }
+  { name: "ghostit", category: "AI", description: "An Android experiment lab for offline personas, speech and compute." },
+  { name: "NS", category: "Physics", description: "A reproducible Navier–Stokes research workbench with numerical labs and bounded hypothesis testing." },
+  { name: "NS-SIM", category: "Physics", description: "Reproducible Navier–Stokes simulations with validation, visualisation and sonification." },
+  { name: "NS-LLM", category: "AI", description: "A proposed Navier–Stokes reasoning architecture separating memory, simulation and verification." },
+  { name: "YANG-MILLS", category: "Physics", description: "A Yang–Mills research lab for lattice dynamics, glueball spectra and provenance-bound numerical evidence." },
+  { name: "NEXUS", category: "Physics", description: "A deterministic centre-transit geometry engine with replayable ledgers and a reversible lattice." },
+  { name: "LHC", category: "Physics", description: "An educational beam-cycle simulator with a reproducible Rust runtime and Lean-checked contracts." },
+  { name: "Trinite", category: "AI", description: "An open workbench for studying small, inspectable models with frozen protocols and replayable evidence." },
+  { name: "QSOL-SYNTHESIS", category: "Research", description: "Cross-project research into trustworthy transformation, observation, recovery and evidence boundaries." },
+  { name: "CONSTRAINT-SHIFT", category: "Research", description: "Studies AI-assisted software development through specification, constraints and verification." },
+  { name: "NOTEBOOK", category: "Research", description: "Experiments on the behaviour of NotebookLM and Gemini Notebook AI hosts." },
+  { name: "RECEIPTS", category: "Research", description: "Audits public sources, metadata and funding, and tests whether AI conclusions stay within the evidence." },
+  { name: "PROVENANCE", category: "Security", description: "Cryptographic provenance and independent chain-of-custody verification for AI and automated systems." },
+  { name: "QSOL-MACH", category: "AI", description: "A deterministic runtime for LLM agents, compiled contracts, tool execution and reproducible workflows." },
+  { name: "WORKBENCH", category: "Research", description: "A capability-driven project workspace with CLI, terminal and local browser interfaces." },
+  { name: "RIVET", category: "Research", description: "A capability-driven C runtime and interface toolkit for small native applications." },
+  { name: "RUNE", category: "Research", description: "A memory-first, integer-only CPU runtime for bounded execution and explicit data movement." },
+  { name: "ROADRUNNER", category: "Research", description: "An experimental C17 graph-routing library with exact shortest paths and reusable bounded memory." },
+  { name: "RANDO", category: "Research", description: "Experiments in AI-led invention, from seeded ideas to a procedural micro-tracker." },
+  { name: "486", category: "Games", description: "A browser-based 486-class PC lab with persistent virtual disks and retro DSP audio." },
+  { name: "ARCADE", category: "Games", description: "Original retro browser games preserving classic arcade experiences." },
+  { name: "QwakeTF", category: "Games", description: "A browser-based Team Fortress-inspired shooter with AI teammates and opponents." },
+  { name: "CorpoWars", category: "Games", description: "A Syndicate-inspired tactical browser game with original procedural visuals, fiction and audio." },
+  { name: "BLOAT-OPS", category: "Games", description: "A satirical tactical shooter waging software warfare against corporate inefficiency." },
+  { name: "LOWBLOWLEGENDS", category: "Games", description: "A 2D arcade fighter with silly rivals, psychological warfare and unconventional finishing moves." },
+  { name: "QUICKSCOPER", category: "Games", description: "A browser quickscope simulator with fast shooting, AI enemies and controller support." },
+  { name: "TrustMeBro", category: "Games", description: "A satirical terminal game about auditing big tech claims, gathering receipts and surviving bureaucracy." },
+  { name: "ZERO-DAY-DREAD", category: "Games", description: "A satirical cybersecurity dashboard generating fictional advisories and absurd AI panic ratings." }
 ]);
 
 // Editorial importance: group order and name order are intentional, never alphabetical.
@@ -99,17 +125,17 @@ const PROJECT_GROUPS = Object.freeze([
   {
     id: "research", title: "Research & foundations", code: "02",
     note: "The wider research programme: models, frameworks and computational investigations.",
-    names: ["res-rag", "CTC", "QSOL-GEO-REASON", "QSOL-SEMANTIC-RELAY", "ETHICS", "QSOL-MORPH", "QSOL-QEC-BRIDGE", "E8", "COSMO", "UFF", "TFT", "QAI-UFT", "RSH", "igm", "substratism", "AUSTRALIAN-FOR-AIS", "BLOCH", "TAS", "synergetics", "synergetics-viz", "synergetics2", "phalpern", "coin", "GLUBALL"]
+    names: ["res-rag", "CTC", "QSOL-GEO-REASON", "QSOL-SEMANTIC-RELAY", "ETHICS", "QSOL-MORPH", "QSOL-QEC-BRIDGE", "NS", "NS-SIM", "NS-LLM", "YANG-MILLS", "NEXUS", "LHC", "Trinite", "QSOL-SYNTHESIS", "CONSTRAINT-SHIFT", "NOTEBOOK", "RECEIPTS", "E8", "COSMO", "UFF", "TFT", "QAI-UFT", "RSH", "igm", "substratism", "AUSTRALIAN-FOR-AIS", "BLOCH", "TAS", "synergetics", "synergetics-viz", "synergetics2", "phalpern", "coin", "GLUBALL"]
   },
   {
     id: "systems", title: "Systems & tools", code: "03",
     note: "AI systems, security work and supporting tools from the constellation.",
-    names: ["QSOL-BLUE-FORGE", "QSOL-SUBSTRATE", "AI-CONTEXT", "QSOL-CONTROL", "QSOL-ORACLE", "QSOL-IBAE", "QSOL-HARNESS", "QSOL-FED", "LATTICE", "QSOL-ARK", "QSOL-INT", "QSOL-IMPORT", "QSOL-THOTH", "HERESY-SEC", "QSOLAI", "ChatGPT", "ghostit", "cbt", "sabine-gpt"]
+    names: ["QSOL-BLUE-FORGE", "QSOL-SUBSTRATE", "AI-CONTEXT", "QSOL-CONTROL", "QSOL-ORACLE", "QSOL-IBAE", "QSOL-MACH", "PROVENANCE", "WORKBENCH", "RIVET", "RUNE", "ROADRUNNER", "QSOL-FED", "LATTICE", "QSOL-ARK", "QSOL-INT", "QSOL-IMPORT", "QSOL-THOTH", "HERESY-SEC", "QSOLAI", "ChatGPT", "ghostit", "cbt", "sabine-gpt"]
   },
   {
     id: "experiments", title: "Sound, play & experiments", code: "04",
     note: "Explore the rest: sonification, games, visualisation and assorted computational heresy.",
-    names: ["SPECTRAL", "SONIFICATION", "QSOL-MAP", "res-rag-viz", "TONELAB", "SAW-1", "GAMES", "QNTOY", "C64", "deepseekc64", "syn-son", "jitterbug", "SDMT-TATE-LAB", "VIZ", "GREEN_PR", "HERESY-API", "HERESY", "LCOS", "DORK", "WHOAMI-18437", "BRAINROTLLM"]
+    names: ["SPECTRAL", "SONIFICATION", "QSOL-MAP", "res-rag-viz", "TONELAB", "SAW-1", "GAMES", "ARCADE", "QwakeTF", "CorpoWars", "BLOAT-OPS", "LOWBLOWLEGENDS", "QUICKSCOPER", "TrustMeBro", "ZERO-DAY-DREAD", "486", "RANDO", "QNTOY", "C64", "deepseekc64", "syn-son", "jitterbug", "SDMT-TATE-LAB", "VIZ", "GREEN_PR", "HERESY-API", "HERESY", "LCOS", "DORK", "WHOAMI-18437", "BRAINROTLLM"]
   }
 ]);
 const PRIORITY_NAMES = PROJECT_GROUPS.flatMap((group) => group.names);
