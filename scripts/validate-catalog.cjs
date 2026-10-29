@@ -12,7 +12,7 @@ const { repos, groups, ordered, categories } = JSON.parse(vm.runInContext(
   context
 ));
 const names = repos.map(repo => repo.name);
-assert.equal(repos.length, 73, "Update the reviewed catalog count when adding/removing projects");
+assert.equal(repos.length, 99, "Update the reviewed catalog count when adding/removing projects");
 assert.equal(new Set(names).size, repos.length, "Repository names must be unique");
 for (const repo of repos) {
   assert.match(repo.name, /^[A-Za-z0-9_.-]+$/);
